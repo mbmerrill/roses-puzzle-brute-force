@@ -23,3 +23,6 @@ Note that more than one solution may/could exist.
 ## The Code
 
 The code takes a brute-force approach, running through all possible permutations to arrive at a solution.
+
+The goal is to output a solution to the puzzle in a format that makes it easy to check with the physical puzzle whether the solution is correct.
+
