@@ -9,6 +9,10 @@ One year at a Yankee Swap I received a puzzle, which I'm calling the "roses puzz
 
 The puzzle consists of nine cardboard squares, henceforth referred to as "tiles."  Each tile has four pictures of a rose on it, one on each edge.  A rose is either big or small, and is one of four colors (white, pink, red, or yellow).
 
+Note that any given tile can have any combination of sizes and colors; the distribution is not identical across the set of tiles.  For example, a particular tile might have 3 large roses and only 1 small rose, and might have two white roses and no yellow roses.
+
+## The Solution
+
 The puzzle is considered solved when the following criteria are met:
 
 * The tiles are arranged in a 3x3 grid.
