@@ -11,8 +11,6 @@ The puzzle consists of nine cardboard squares, henceforth referred to as "tiles.
 
 Note that any given tile can have any combination of sizes and colors; the distribution is not identical across the set of tiles.  For example, a particular tile might have 3 large roses and only 1 small rose, and might have two white roses and no yellow roses.
 
-## The Solution
-
 The puzzle is considered solved when the following criteria are met:
 
 * The tiles are arranged in a 3x3 grid.
