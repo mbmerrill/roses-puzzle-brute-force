@@ -99,11 +99,11 @@ public class BruteForceSolverTest {
 	@Before
 	public void before() {
 		solver = new BruteForceSolver();
-		solver.setTiles(correctTileOrder);
 	}
 	
 	@Test
 	public void testSolverGood() {
+		solver.setTiles(correctTileOrder);
 		List<Arrangement> solutions = solver.solve(false);
 		assertEquals(1, solutions.size());
 		Arrangement arrangement = solutions.get(0);
@@ -133,6 +133,41 @@ public class BruteForceSolverTest {
 		solver.setTiles(badList);
 		List<Arrangement> solutions = solver.solve(false);
 		assertEquals(0, solutions.size());
+	}
+	
+	@Test(expected = IllegalStateException.class)
+	public void testNullTileList() {
+		solver.solve(false);
+	}
+	
+	@Test(expected = IllegalStateException.class)
+	public void testTileListTooSmall() {
+		List<Tile> badList = new ArrayList<Tile>();
+		for (int i = 0; i < (Arrangement.ROWS * Arrangement.COLS - 1); i++) {
+			badList.add(new Tile((i + 1), 
+					new TileEdge(Color.PINK, Size.SMALL),
+					new TileEdge(Color.PINK, Size.SMALL),
+					new TileEdge(Color.PINK, Size.SMALL),
+					new TileEdge(Color.PINK, Size.SMALL)
+					));
+		}
+		solver.setTiles(badList);
+		solver.solve(false);
+	}
+
+	@Test(expected = IllegalStateException.class)
+	public void testTileListTooLarge() {
+		List<Tile> badList = new ArrayList<Tile>();
+		for (int i = 0; i < (Arrangement.ROWS * Arrangement.COLS + 1); i++) {
+			badList.add(new Tile((i + 1), 
+					new TileEdge(Color.PINK, Size.SMALL),
+					new TileEdge(Color.PINK, Size.SMALL),
+					new TileEdge(Color.PINK, Size.SMALL),
+					new TileEdge(Color.PINK, Size.SMALL)
+					));
+		}
+		solver.setTiles(badList);
+		solver.solve(false);
 	}
 	
 }

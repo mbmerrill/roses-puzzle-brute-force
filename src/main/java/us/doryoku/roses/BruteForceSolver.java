@@ -74,6 +74,10 @@ public class BruteForceSolver implements Solver {
 	 */
 	public List<Arrangement> solve(boolean iterateOverAllPermutationsOfTileOrder) {
 
+		if (tiles == null || tiles.size() != (Arrangement.ROWS * Arrangement.COLS)) {
+			throw new IllegalStateException("tiles list must be defined and have length of [" + (Arrangement.ROWS * Arrangement.COLS) + "]");
+		}
+		
 		log.info("Starting brute-force solution of roses puzzle");
 
 		List<Arrangement> retval = new ArrayList<Arrangement>();
